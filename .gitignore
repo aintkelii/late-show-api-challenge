@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+*.db
+.env
+*.sqlite3
+migrations/
+Pipfile.lock
+.venv/

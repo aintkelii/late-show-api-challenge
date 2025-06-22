@@ -1,0 +1,99 @@
+{
+  "info": {
+    "name": "Late Show API Challenge",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Register",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"username\": \"admin\", \"password\": \"password123\"}",
+          "options": { "raw": { "language": "json" } }
+        },
+        "url": "{{base_url}}/register"
+      }
+    },
+    {
+      "name": "Login",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"username\": \"admin\", \"password\": \"password123\"}",
+          "options": { "raw": { "language": "json" } }
+        },
+        "url": "{{base_url}}/login"
+      }
+    },
+    {
+      "name": "Get Episodes",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{base_url}}/episodes"
+      }
+    },
+    {
+      "name": "Get Episode by ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{base_url}}/episodes/1"
+      }
+    },
+    {
+      "name": "Delete Episode",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "url": "{{base_url}}/episodes/1"
+      }
+    },
+    {
+      "name": "Get Guests",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{base_url}}/guests"
+      }
+    },
+    {
+      "name": "Create Appearance",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"rating\": 3, \"guest_id\": 1, \"episode_id\": 1\"}",
+          "options": { "raw": { "language": "json" } }
+        },
+        "url": "{{base_url}}/appearances"
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:5000"
+    },
+    {
+      "key": "token",
+      "value": ""
+    }
+  ]
+}
